@@ -26,10 +26,9 @@ class TokenCreate(APIView):
         request.data['unique_hash'] = genHash()
         request.data['tx_hash'] = tx_create(request.data).hex()
         serializer = TokenSerializer(data=request.data)
-        print(serializer)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            token = serializer.save()
+            return Response(TokenSerializer(token).data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     
