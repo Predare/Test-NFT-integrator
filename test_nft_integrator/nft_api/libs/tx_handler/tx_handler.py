@@ -1,7 +1,7 @@
 from web3 import Web3, HTTPProvider
 from web3.middleware import geth_poa_middleware
 import inspect
-from ..EnvVarsExtractor.VariablesList import private_key,wallet_address,contract_address,contract_abi,project_id
+from ..env_vars_extractor.variables_list import private_key,wallet_address,contract_address,contract_abi,project_id
 
 w3 = Web3(Web3.HTTPProvider('https://rinkeby.infura.io/v3/{}'.format(project_id)))  
 w3.middleware_onion.inject(geth_poa_middleware, layer=0)

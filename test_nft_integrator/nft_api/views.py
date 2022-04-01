@@ -6,8 +6,8 @@ from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .libs.HashGenerator.generator import genHash
-from .libs.TxHandler.TxHandler import tx_create, tx_total_supply
+from .libs.hash_generator.generator import genHash
+from .libs.tx_handler.tx_handler import tx_create, tx_total_supply
 
 class TokenList(APIView):
     def get(self, request, format=None):
