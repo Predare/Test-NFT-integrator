@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from ..nft_api.libs.EnvVarsExtractor.VariablesList import django_secret_key
-
+from .libs.env_vars_extractor.variables_list import django_secret_key
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
